@@ -10,7 +10,7 @@ const SignIn = () => {
   const handleForm = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const name = e.target.name?.value;
+    const name = e.target.name?.value || "";
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, email, password);
