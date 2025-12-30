@@ -42,7 +42,7 @@ const SignIn = () => {
         onSubmit={handleForm}
       >
         <h1 className="font-bold tracking-wide">
-          {isRegistered ? "Login" : "Sign up Today!"}
+          {isRegistered ? "Hello Again!" : "Sign up Today!"}
         </h1>
         {!isRegistered && (
           <input
