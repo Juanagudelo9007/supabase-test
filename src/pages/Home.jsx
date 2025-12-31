@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AuthLogin } from "../context/UserAuth";
 import { useContext } from "react";
 
+
 const Home = () => {
   const { userData } = useContext(AuthLogin);
   const [showMessage, setShowMessage] = useState(true);
@@ -21,6 +22,8 @@ const Home = () => {
           Hi, {userData?.user_metadata?.name}
         </h1>
       )}
+   
+       
     </div>
   );
 };

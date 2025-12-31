@@ -2,25 +2,24 @@ import React from "react";
 import { Link } from "react-router";
 import { AuthLogin } from "../context/UserAuth";
 import { useContext } from "react";
+import { MdHomeFilled } from "react-icons/md";
+import SearchInput from "./SearchInput";
+import InputSearch from "./InputSearch";
+
 
 const Navbar = () => {
   const { userOut, userData } = useContext(AuthLogin);
 
   return (
-    <div className="min-screen w-full">
-      <div className="relative w-full flex h-12 p-2 justify-center items-center gap-5 bg-black/80 text-white">
-        <h1 className="absolute left-3 capitalize text-green-400">
-          {userData?.user_metadata?.name}
-        </h1>
-        <Link to={"/home"}>Home</Link>
-        <Link to={"/myspace"}>My Space</Link>
-
-        <button
-          className="absolute right-3 bg-green-500 px-4 py-0.5 rounded-md  active:scale-70 transition-all duration-400"
-          onClick={userOut}
-        >
-          Log Out
-        </button>
+    <div className="relative w-full h-14 flex items-center justify-center">
+      <button className="absolute right-2 bg-orange-500 rounded-full px-2 border-8 border-zinc-700 capitalize text-black text-xl font-bold">
+        {userData?.user_metadata?.name.charAt(0)}
+      </button>
+      <div className=" w-full flex items-center justify-center">
+        <Link>
+          <MdHomeFilled size={20} />
+        </Link>
+        <InputSearch />
       </div>
     </div>
   );

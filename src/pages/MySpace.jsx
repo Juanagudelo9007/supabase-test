@@ -3,7 +3,7 @@ import React from 'react'
 const MySpace = () => {
   return (
     <div>
-       My Space
+       hola este es myspace
     </div>
   )
 }

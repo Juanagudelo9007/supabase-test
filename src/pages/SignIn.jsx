@@ -15,7 +15,6 @@ const SignIn = () => {
     setUserData,
     setIsRegistered,
     isRegistered,
-    e,
   } = useContext(AuthLogin);
 
   const handleForm = async (e) => {
