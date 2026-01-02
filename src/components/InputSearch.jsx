@@ -6,8 +6,8 @@ const InputSearch = () => {
 
   return (
     <div
-      className={`flex items-center bg-amber-300 rounded-full overflow-hidden transition-all duration-500 ${
-        open ? "w-64" : "w-8"
+      className={`flex items-center bg-[#3B3A3A] rounded-full overflow-hidden transition-all duration-500 text-white ${
+        open ? "w-48" : "w-8"
       }`}
     >
       <button
@@ -18,7 +18,7 @@ const InputSearch = () => {
       </button>
       <input
         type="text"
-        placeholder="what do you want to play?"
+        placeholder="search a song"
         className={`bg-transparent outline-none   transition-all duration-300 ${
           open ? "w-full opacity-100" : "opacity-0 w-0"
         }`}

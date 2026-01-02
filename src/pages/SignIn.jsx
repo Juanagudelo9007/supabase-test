@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { supabase } from "../supabase/ClientSupabase";
 import { AuthLogin } from "../context/UserAuth";
 import Overlay from "../components/Overlay";
+import { PiSpotifyLogoThin } from "react-icons/pi";
 
 const SignIn = () => {
   const {
@@ -12,7 +13,6 @@ const SignIn = () => {
     setErrorMessage,
     errorMessage,
     userData,
-    setUserData,
     setIsRegistered,
     isRegistered,
   } = useContext(AuthLogin);
@@ -34,15 +34,20 @@ const SignIn = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
+    <div className="w-full min-h-screen bg-black flex  flex-col items-center justify-center gap-6 ">
+      <span className="text-white">
+        <PiSpotifyLogoThin size={50} />
+      </span>
+      <h1 className="font-bold tracking-wide text-white text-2xl text-center">
+        {isRegistered
+          ? "Hello Again!"
+          : "Sign up to start listening to content !"}
+      </h1>
       <form
         action=""
-        className="w-80 h-80 flex flex-col items-center justify-center gap-5 bg-black text-white"
+        className="w-80 h-80 flex flex-col items-center justify-center gap-6 text-white"
         onSubmit={handleForm}
       >
-        <h1 className="font-bold tracking-wide">
-          {isRegistered ? "Hello Again!" : "Sign up Today!"}
-        </h1>
         {!isRegistered && (
           <input
             type="text"
@@ -64,7 +69,7 @@ const SignIn = () => {
           className="outline-none border-b"
         />
         <button
-          className="bg-green-600 text-black px-6 py-1 rounded-sm font-bold active:scale-70 transition-all duration-400 hover:bg-green-500 "
+          className="bg-green-600 text-black px-6 py-1 rounded-full font-bold active:scale-70 transition-all duration-400 hover:bg-green-500 "
           type="submit"
         >
           {isRegistered ? "Login" : "Sign Up"}

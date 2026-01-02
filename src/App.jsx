@@ -7,7 +7,9 @@ import { useContext } from "react";
 const App = () => {
   const { userData } = useContext(AuthLogin);
 
-  return <>{!userData ? <SignIn /> : <AppRouter />}</>;
+   return <>{!userData ? <SignIn /> : <AppRouter />}
+        
+  </>;
 };
 
 export default App;

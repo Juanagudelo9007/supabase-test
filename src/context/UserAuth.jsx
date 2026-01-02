@@ -9,6 +9,8 @@ const UserAuth = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+   const [openModal, setOpenModal] = useState(false);
+    
 
   {
     /*Function to signup */
@@ -124,6 +126,8 @@ const UserAuth = ({ children }) => {
         setIsRegistered,
         isRegistered,
         userOut,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}
